@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 
 # TODO prefixをコマンドから設定できるようにする
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('-'), help_command=None, status=discord.Status.dnd, activity=discord.Streaming(name="-help | v1.0.1", url='https://discord.py'))
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('-'), help_command=None, status=discord.Status.dnd, activity=discord.Streaming(name="-help | v1.0.2", url='https://discord.py'))
 
 config = {
     'Daug': {
