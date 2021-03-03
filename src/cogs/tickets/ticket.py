@@ -48,7 +48,7 @@ class Ticket(commands.Cog):
 
         channel_support = await message.guild.create_text_channel(
             name=f"ticket-{str(message.author.id)[:6]}",
-            topic=message.author.id,
+            topic=message.content,
             category=category_open,
             overwrites=overwrites
         )
@@ -73,9 +73,7 @@ class Ticket(commands.Cog):
         )
 
     async def dispatch_close(self, channel):
-        await channel.edit(
-            category=channel.guild.get_channel(self.category_closed_id)
-        )
+        await channel.delete()
 
     def is_category_open(self, channel):
         return channel.category_id == self.category_open_id
