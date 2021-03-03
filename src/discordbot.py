@@ -17,7 +17,7 @@ config = {
         'category_open_id': 816551448691081259,
         'category_closed_id': 816551777632649238,
         'category_archive_id': 737987225513361409,
-        'category_rr_id': 710665558592323608
+        'category_rr_id': 732589048077615115
     },
 }
 
@@ -55,5 +55,6 @@ if __name__ == '__main__':
     # Cogを読み込む
     bot.load_extension('cogs.tickets.ticket')
     bot.load_extension('cogs.tickets.ticketpanel')
+    bot.load_extension('cogs.utilities.rr')
     # Botの起動
     bot.run(os.environ['DISCORD_BOT_TOKEN'])
