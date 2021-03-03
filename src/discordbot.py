@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 
 # TODO prefixをコマンドから設定できるようにする
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('-'), help_command=None, status=discord.Status.dnd, activity=discord.Streaming(name="-help | v1.0.0", url='https://discord.py'))
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('-'), help_command=None, status=discord.Status.dnd, activity=discord.Streaming(name="-help | v1.0.1", url='https://discord.py'))
 
 config = {
     'Daug': {
@@ -17,8 +17,15 @@ config = {
         'category_open_id': 816551448691081259,
         'category_closed_id': 816551777632649238,
         'category_archive_id': 737987225513361409,
+        'category_rr_id': 710665558592323608
     },
 }
+
+reactionsRole = {
+    "📢":"おしらせ-Hato鯖に関する情報をお届けいたします！-816595893519908905",
+    "💡":"チップ-Hato鯖における豆知識などの情報をお届けいたします！-816595928601067560",
+    "💭":"マイクラチャット-全サバのチャット-816595833465077772"
+    }
 
 reactions = {
     "🚋":"私鉄建設に関する申請-私鉄建設に関する申請はこちらからお願いします",
@@ -44,6 +51,7 @@ if __name__ == '__main__':
     bot.reactions = reactions
     bot.message_on_ticket = message_on_ticket
     bot.message_on_ticket_explain = message_on_ticket_explain
+    bot.reactionsRole = reactionsRole
     # Cogを読み込む
     bot.load_extension('cogs.tickets.ticket')
     bot.load_extension('cogs.tickets.ticketpanel')

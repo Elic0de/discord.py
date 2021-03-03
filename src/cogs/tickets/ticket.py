@@ -38,7 +38,6 @@ class Ticket(commands.Cog):
             await message.delete()
             return
 
-        
         role_support =  message.guild.get_role(self.role_support_id)
 
         overwrites = {
