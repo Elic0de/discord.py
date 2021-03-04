@@ -37,9 +37,9 @@ def generate_card(author):
         f'{username}が出たぞー！'
     ]
     
-    icon = Image.open('hato/icon.png').copy()
+    icon = Image.open('src/hato/icon.png').copy()
     icon = icon.resize(size=(252, 252), resample=Image.ANTIALIAS)
-    base_image_path = random.choice(glob.glob('hato/assets/images/*.png'))
+    base_image_path = random.choice(glob.glob('src/hato/assets/images/*.png'))
     base_img = Image.open(base_image_path).copy()
     base_img = base_img.resize(size=(1100, 500), resample=Image.ANTIALIAS)
     base = base_img.copy().convert('RGBA')
@@ -55,7 +55,7 @@ def generate_card(author):
     icon.putalpha(mask)
     base_img.paste(icon, (80, 134), icon)
 
-    font_path = "hato/assets/fonts/SourceHanSans-Heavy.otf"
+    font_path = "src/hato/assets/fonts/SourceHanSans-Heavy.otf"
 
     random_message = random.choice(file)
     font_size = 57
@@ -71,4 +71,4 @@ def generate_card(author):
     width = 80
     img = add_text_to_image(base_img, welcome_message, font_path, font_size, font_color, height, width)
 
-    base_img.save('hato/card.png', quality=95)
+    base_img.save('src/hato/card.png', quality=95)

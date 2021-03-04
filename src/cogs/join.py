@@ -17,18 +17,18 @@ class Join(commands.Cog):
             return
         if member.bot:
             return
-        await member.author.avatar_url.save('hato/icon.png')
+        await member.author.avatar_url.save('src/hato/icon.png')
         generate_card(member.author)
         welcome_channel = member.guild.get_channel(self.channel_welcome_id)
         role_member = member.guild.get_role(self.role_member_id)
         await member.add_roles(role_member)
-        await welcome_channel.send(file=discord.File('hato/card.png'))
+        await welcome_channel.send(file=discord.File('src/hato/card.png'))
     
     @commands.command()
     async def card(self, ctx):
-        await ctx.author.avatar_url.save('hato/icon.png')
+        await ctx.author.avatar_url.save('src/hato/icon.png')
         generate_card(ctx.author)
-        await ctx.send(file=discord.File('hato/card.png'))
+        await ctx.send(file=discord.File('src/hato/card.png'))
 
 def setup(bot):
     bot.add_cog(Join(bot))
