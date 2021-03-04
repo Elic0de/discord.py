@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 
 # TODO prefixをコマンドから設定できるようにする
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('-'), help_command=None, status=discord.Status.dnd, activity=discord.Streaming(name="-help | v1.0.3", url='https://discord.py'))
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('-'), help_command=None, status=discord.Status.dnd, activity=discord.Streaming(name="-help | v1.1.0", url='https://discord.py'))
 
 config = {
     'Daug': {
@@ -54,6 +54,7 @@ if __name__ == '__main__':
     bot.reactionsRole = reactionsRole
     # Cogを読み込む
     bot.load_extension('cogs.tickets.ticket')
+    bot.load_extension('cogs.join')
     bot.load_extension('cogs.tickets.ticketpanel')
     bot.load_extension('cogs.utilities.rr')
     # Botの起動
