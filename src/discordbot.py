@@ -17,7 +17,8 @@ config = {
         'category_open_id': 816551448691081259,
         'category_closed_id': 816551777632649238,
         'category_archive_id': 737987225513361409,
-        'category_rr_id': 732589048077615115
+        'category_rr_id': 732589048077615115,
+        'channel_welcome_id': 415803587948445697
     },
 }
 
