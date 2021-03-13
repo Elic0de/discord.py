@@ -25,6 +25,7 @@ class Join(commands.Cog):
         await welcome_channel.send(file=discord.File('src/hato/card.png'))
     
     @commands.command()
+    @commands.guild_only()
     async def card(self, ctx):
         await ctx.author.avatar_url.save('src/hato/icon.png')
         generate_card(ctx.author)

@@ -1,6 +1,7 @@
 import os
 import discord
 from discord.ext import commands
+from discord import Colour
 
 # TODO prefixをコマンドから設定できるようにする
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('-'), help_command=None, status=discord.Status.dnd, activity=discord.Streaming(name="-help | v1.1.1", url='https://discord.py'))
@@ -58,5 +59,6 @@ if __name__ == '__main__':
     bot.load_extension('cogs.join')
     bot.load_extension('cogs.tickets.ticketpanel')
     bot.load_extension('cogs.utilities.rr')
+    bot.load_extension('cogs.utilities.dispander')
     # Botの起動
     bot.run(os.environ['DISCORD_BOT_TOKEN'])
